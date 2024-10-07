@@ -13,6 +13,8 @@ const EditSectionForm = ({ data }) => {
   const startingData = {
     name: EDITMODE ? data.name : "",
     secid: EDITMODE ? data.secid : 1,
+    limit_title: EDITMODE ? data.limit_title : 0,
+    limit_description: EDITMODE ? data.limit_description : 0,
   };
 
   const [formData, setFormData] = useState(startingData);
@@ -53,6 +55,28 @@ const EditSectionForm = ({ data }) => {
             onChange={handler.trakeChange}
             required
           />
+          {EDITMODE && (
+            <>
+              <Input
+                type="number"
+                id="limit_title"
+                name="limit_title"
+                label="Limit Title"
+                color="input-primary"
+                value={formData.limit_title}
+                onChange={handler.trakeChange}
+              />
+              <Input
+                type="number"
+                id="limit_description"
+                name="limit_description"
+                label="Limit Title"
+                color="input-primary"
+                value={formData.limit_description}
+                onChange={handler.trakeChange}
+              />
+            </>
+          )}
           <Input
             type="submit"
             style="btn btn-active btn-primary"

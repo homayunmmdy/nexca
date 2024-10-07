@@ -13,6 +13,8 @@ const sectionSchema = new Schema(
     secid: {
       type: Number,
     },
+    limit_title: Number,
+    limit_description: Number,
   },
   {
     timestamps: true,
